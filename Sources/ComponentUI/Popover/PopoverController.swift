@@ -16,7 +16,7 @@ extension View {
 	@ViewBuilder
 	public func nativePopover<Content: View>(
 		isPresented: Binding<Bool>,
-		arrowDirection: UIPopoverArrowDirection,
+		arrowDirection: UIPopoverArrowDirection = .up,
 		@ViewBuilder content: @escaping () -> Content
 	) -> some View {
 		self

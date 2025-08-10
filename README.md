@@ -47,5 +47,54 @@ struct SomeView: View {
 }
 ```
 
+### Popover/tooltip
+
+The native SwiftUI Popover for iOS looks like a sheet which is different from the UIKit version.
+This component reuses UIKit `UIPopoverPresentationController` in swiftUI.
+
+Usage
+```swift
+import ComponentUI
+
+struct SomeView: View {
+	@State private var isPresented = false
+	
+	var body: some View {
+		Button("Popover/Tooltip") {
+			isPresented.toggle()
+		}
+		.nativePopover($isPresented) {
+			ActualPopoverDesignView()
+		}
+	}
+}
+```
+
+### Calendar Popover
+
+In SwiftUI, we use `DatePicker` and the drawback is in design as we are forced to have the triggering UI/button/label look like apple recomends(ie: there is no room to style the triggering UI as you want)
+This component allows you to have the calendar in a popover or tooltip style while giving you room to style your triggering button/label as you wish.
+
+Usage
+```swift
+import ComponentUI
+
+struct SomeView: View {
+@State private var isPresented = false
+@State private var selectedDate: Date = .now
+
+	var body: some View {
+		Button {
+			isPresented.toggle()
+		} label: {
+			Text("Style it as you wish")
+		}
+		.calendarPopover(for: .date, isPresented: $isPresented, selected: $selectedDate)
+	}
+}
+```
+> Note: this component is still limited in selecting the date range. But will be updated soon to allow all the range expressions
+
+
 > NOTE:
 > Built this project in a learning environment, can't credit all my sources but the internet has been good to having all this live
