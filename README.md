@@ -95,6 +95,28 @@ struct SomeView: View {
 ```
 > Note: this component is still limited in selecting the date range. But will be updated soon to allow all the range expressions
 
+### TextWithLink
+
+Displays a string where specified substrings are styled as tappable hyperlinks. The links open in `Safari`, so when linking a url, make sure it is compatible/readable in Safari.
+
+> This is useful for creating legal disclaimers, terms & conditions notices, or any text where only part of the text should be interactive.
+
+Usage:
+```swift
+import ComponentUI
+struct SomeView: View {
+	var body: some View {
+		TextWithLink(
+			text: "By continuing, you agree to our Privacy Policy.",
+			links: [
+				"Privacy Policy.": "https://www.ibirori.rw"
+			],
+			highlightColor: .pink,
+			underlineStyle: .single
+		)
+	}
+}
+```
 
 > NOTE:
 > Built this project in a learning environment, can't credit all my sources but the internet has been good to having all this live
