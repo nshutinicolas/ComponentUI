@@ -103,6 +103,7 @@ Displays a string where specified substrings are styled as tappable hyperlinks. 
 
 Usage:
 ```swift
+import ComponentUI
 struct SomeView: View {
 	var body: some View {
 		TextWithLink(
