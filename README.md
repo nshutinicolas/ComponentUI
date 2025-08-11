@@ -97,7 +97,7 @@ struct SomeView: View {
 
 ### TextWithLink
 
-Displays a string where a specified substrings are styled as tappable hyperlinks. The links open in `Safari`. So when linking a url, make sure it is compatible/readable in Safari.
+Displays a string where specified substrings are styled as tappable hyperlinks. The links open in `Safari`, so when linking a url, make sure it is compatible/readable in Safari.
 
 > This is useful for creating legal disclaimers, terms & conditions notices, or any text where only part of the text should be interactive.
 
