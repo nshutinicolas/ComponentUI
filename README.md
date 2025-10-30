@@ -118,5 +118,29 @@ struct SomeView: View {
 }
 ```
 
+### FlowLayout
+
+A custom layout that arranges views horizontally and wraps them to the next line when there isn't enough horizontal space.
+`FlowLayout` works similarly to a `HStack` that wraps to the next row, making it ideal for tag lists, keyword chips, categories, or variable-width buttons.
+
+Usage:
+```swift
+import ComponentUI
+struct SomeView: View {
+	var body: some View {
+		FlowLayout(horizontalSpacing: 12, verticalSpacing: 8) {
+			ForEach(["Swift", "SwiftUI", "iOS", "Flow", "ComponentUI"], id: \.self) { tag in
+				Text(tag)
+					.padding(.horizontal, 8)
+					.padding(.vertical, 6)
+					.background(Color.blue.opacity(0.5))
+					.cornerRadius(8)
+			}
+		}
+		.padding()
+	}
+}
+```
+
 > NOTE:
 > Built this project in a learning environment, can't credit all my sources but the internet has been good to having all this live
